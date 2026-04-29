@@ -1,0 +1,123 @@
+########################################################################
+# 1) 全局默认策略
+########################################################################
+# 自动检测文本。去除了 eol=lf，避免误伤未声明的冷门二进制文件
+* text=auto
+
+########################################################################
+# 2) 强制二进制的文件 (使用 binary 替代 -text，禁用无意义的 diff)
+########################################################################
+# 图片
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.bmp  binary
+
+# 字体
+*.eot  binary
+*.ttf  binary
+*.otf  binary
+*.woff binary
+*.woff2 binary
+
+# 音频（语音/ASR/TTS 系统）
+*.mp3  binary
+*.wav  binary
+*.ogg  binary
+*.flac binary
+*.aac  binary
+*.m4a  binary
+
+# 模型权重与张量数据
+*.bin  binary
+*.onnx binary
+*.pt   binary
+*.pth  binary
+*.safetensors binary
+*.gguf binary
+*.pkl  binary
+
+# 仿真网格与CAD文件
+*.stl  binary
+*.step binary
+*.fbx  binary
+
+# 文档
+*.pdf  binary
+*.docx binary
+*.doc  binary
+*.xlsx binary
+
+########################################################################
+# 3) 源代码 — 强制文本 + LF
+########################################################################
+# 前端 (React / TypeScript)
+*.ts   text eol=lf
+*.tsx  text eol=lf
+*.js   text eol=lf
+*.jsx  text eol=lf
+*.css  text eol=lf
+*.html text eol=lf
+*.svg  text eol=lf
+
+# 后端与算法 (Python / C++)
+*.py   text eol=lf
+*.ipynb text eol=lf
+*.cpp  text eol=lf
+*.hpp  text eol=lf
+*.c    text eol=lf
+*.h    text eol=lf
+
+# 通信/RPC
+*.proto text eol=lf
+
+########################################################################
+# 4) 配置、数据与机器人描述文件 — 强制文本 + LF
+########################################################################
+*.json  text eol=lf
+*.yaml  text eol=lf
+*.yml   text eol=lf
+*.toml  text eol=lf
+*.cfg   text eol=lf
+*.ini   text eol=lf
+*.txt   text eol=lf
+*.md    text eol=lf
+*.csv   text eol=lf
+*.xml   text eol=lf
+
+# 机器人仿真描述
+*.urdf  text eol=lf
+*.mjcf  text eol=lf
+*.obj   text eol=lf
+*.dae   text eol=lf
+
+# Shell & Docker（必须在 Linux 运行）
+*.sh              text eol=lf
+Dockerfile        text eol=lf
+docker-compose.* text eol=lf
+.dockerignore     text eol=lf
+
+# Python 锁文件（行尾影响哈希）
+poetry.lock  text eol=lf
+Pipfile      text eol=lf
+Pipfile.lock text eol=lf
+
+# Node.js 锁文件（行尾影响哈希）
+package-lock.json text eol=lf
+yarn.lock         text eol=lf
+pnpm-lock.yaml    text eol=lf
+
+# Git 自身
+.gitignore     text eol=lf
+.gitattributes text eol=lf
+.editorconfig  text eol=lf
+
+########################################################################
+# 5) Windows 脚本 — 唯一需要 CRLF 的地方
+########################################################################
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+*.ps1  text eol=crlf

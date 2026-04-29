@@ -1,0 +1,39 @@
+# --- 语音/视频数据 (防止大文件上传) ---
+*.wav
+*.pcm
+*.mp3
+*.mp4
+*.raw
+*.m4a
+*-text:Zone.Identifier
+*:Zone.Identifier
+*.Identifier
+**/voice_cache.json
+
+
+# --- Python 相关 ---
+**/__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+.env
+
+# --- 编辑器与系统相关 ---
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- 临时文件与日志 ---
+temp/
+tmp/
+*.log
+dist/
+build/
+
+# --- Node.js 相关 ---
+**/package-lock.json
